@@ -1,0 +1,72 @@
+<!doctype html>
+
+    <head>
+        <title>Cadenas</title>
+    </head>
+
+
+    <body>
+    <script type="text/javascript">
+        function mensaje(cadenaADividir){
+            document.write('<p>La cadena original es: "' + cadenaADividir + '"');
+        }
+
+        function dividirCadena(cadenaADividir,separador) {
+        var arrayDeCadenas = cadenaADividir.split(separador);
+   
+        document.write("<br><br>La cadena tiene " + arrayDeCadenas.length + " palabras ");
+
+        }
+
+        function primeraPalabra(cadenaADividir,separador) {
+            var primeraPalabra = cadenaADividir.split(separador)[0];
+            document.write("<br><br>La primera palabra es " +  primeraPalabra);
+        }
+
+        function ultimaPalabra(cadenaADividir,separador) {
+            var arrayDeCadenas = cadenaADividir.split(separador);
+            var ultimaPalabra = arrayDeCadenas[arrayDeCadenas.length - 1]
+            document.write("<br><br>La última palabra es "+ ultimaPalabra);
+        }
+
+        function invertir(cadenaADividir,separador){
+            var arrayDeCadenas = cadenaADividir.split(separador);
+            var cadenaInvertida = arrayDeCadenas.reverse();
+            document.write("<br><br>La cadena invertida quedaría así:<br>"+cadenaInvertida);
+        }
+
+        function ordenarAZ(cadenaADividir,separador){
+            var arrayDeCadenas = cadenaADividir.split(separador);
+            var cadenaOrdenada = arrayDeCadenas.sort(function (a, b) {
+            return a.localeCompare(b);
+        });
+        document.write("<br><br>La cadena ordenada alfabéticamente quedaría así:<br>"+cadenaOrdenada);
+        }
+
+        function ordenarZA(cadenaADividir,separador){
+            var arrayDeCadenas = cadenaADividir.split(separador);
+            var cadenaOrdenada = arrayDeCadenas.sort(function (a, b) {
+            return a.localeCompare(b);
+        });
+        var cadenaZA = cadenaOrdenada.reverse();
+        document.write("<br><br>La cadena ordenada de la z a la a quedaría así:<br>"+cadenaZA);
+    }
+
+        var cadenaNombres = "María, Juan, Leticia, Manuel, Álvaro, Fernando, Gabriel, Joaquín, José, David.";
+
+        var espacio = " ";
+        var coma = ", ";
+
+        mensaje(cadenaNombres);
+        dividirCadena(cadenaNombres, coma);
+        primeraPalabra(cadenaNombres, coma);
+        ultimaPalabra(cadenaNombres, coma);
+        invertir(cadenaNombres, coma);
+        ordenarAZ(cadenaNombres, coma);
+        ordenarZA(cadenaNombres, coma);
+
+    </script>
+
+    </body>
+
+</html>
