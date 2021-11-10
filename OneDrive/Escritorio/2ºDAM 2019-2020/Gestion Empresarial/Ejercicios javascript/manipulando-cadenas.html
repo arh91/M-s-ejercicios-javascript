@@ -1,0 +1,78 @@
+<!doctype html>
+
+    <head>
+        <title>cadenas</title>
+    </head>
+
+
+    <body>
+        <script text="type/javascript">
+
+        function mensaje(texto){
+            document.write("La frase con la que vamos a trabajar es :<br>"+texto+"<br><br>");
+        }
+
+        function contarCaracteres(texto){
+        var textoSinEspacios = texto.replace(/ /g, "");
+        var numeroCaracteres = textoSinEspacios.length;
+        document.write("El número de carácteres en esa frase es de "+numeroCaracteres+"<br><br>");
+        }
+
+        function contarVocales(texto){
+            var contador=0;
+            for(i=0;i<texto.length;i++){
+                if(texto[i]=='a'||texto[i]=='e'||texto[i]=='i'||texto[i]=='o'||texto[i]=='u'){
+                    contador++;
+                }
+            }
+            document.write("En esa frase hay "+contador+" vocales.<br><br>")
+        }
+
+        function primeraLetra(texto){
+            document.write("La primera letra es "+texto.charAt(0));
+        }
+
+        function numeroPalabras(texto,separador) {
+        var arrayDePalabras = texto.split(separador);  
+        document.write("<br><br>La cadena tiene " + arrayDePalabras.length + " palabras <br><br>");
+        }
+
+        function numeroABZ(texto){
+            var contadorA=0;
+            var contadorB=0;
+            var contadorZ=0;
+                for(i=0;i<texto.length;i++){
+                    //if(texto[i]=='a'){
+                    //  contadorA++;
+                // }
+                // if(texto[i])
+
+                switch(texto[i]){
+                    case 'a':
+                    contadorA++;
+                    break;
+                    case 'b':
+                    contadorB++;
+                    break;
+                    case 'z':
+                    contadorZ++;
+                }              
+                }
+                document.write("En esta frase la a aparece "+contadorA+" veces, la b "+contadorB+" veces y la z "+contadorZ+" veces.");
+        }
+
+
+        var texto = "Practicando con ejercicios de Javascript";
+        var espacio = " ";
+
+        mensaje(texto);
+        contarCaracteres(texto);
+        contarVocales(texto);
+        primeraLetra(texto);
+        numeroPalabras(texto,espacio);
+        numeroABZ(texto);
+        </script>
+
+    </body>
+
+</html>
